@@ -169,11 +169,112 @@ body {
 }
 /* for MENU */
 .menu-content {
-
+  background-color: var(--oxford-blue);
+  box-shadow: 2px 3px 10px 0px #000000;
+  gap: 2rem;
+  justify-content: start;
+  overflow: auto;
+}
+.product {
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 20rem;
+  border-radius: 1rem;
+  background-color: rgb(237, 233, 233);
+  border-bottom: 0.4rem solid var(--coquelicot);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+.product > .product-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.product.one > .product-image {
+  background-image: url(d3e6a3a6c46a56c5734e.jpg);
+}
+.product.two > .product-image {
+  background-image: url(800e9e4eb752e5a27a28.jpg);
+}
+.product.three > .product-image {
+  background-image: url(0d706a0b1f68dfaf4b6f.jpg);
+}
+.product.four > .product-image {
+  background-image: url(8acc9ed433f01c643734.jpg);
+}
+.product.five > .product-image {
+  background-image: url(4d17ab89c9e7dfd3b7b2.jpg);
+}
+.product.six > .product-image {
+  background-image: url(ed712fa3780599beb6c9.jpg);
+}
+.product-details {
+  display: grid;
+  grid-template: 3fr 5fr / 4fr 1fr;
+  grid-template-areas:
+    "title         price"
+    "description   description"
+  ;
+}
+.product-details > p:nth-of-type(1) {
+  grid-area: title;
+  align-self: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+.product-details > p:nth-of-type(2) {
+  grid-area: price;
+  place-self: center;
+  margin-right: 0.6rem;
+  font-size: 1.4rem;
+}
+.product-details > p:nth-of-type(3) {
+  grid-area: description;
+  place-self: center;
+  margin: -1.5rem 1rem 0 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
 }
 /* for CONTACT */
 .contact-content {
-
+  background-color: var(--oxford-blue);
+  box-shadow: 2px 3px 10px 0px #000000;
+  gap: 3rem;
+  justify-content: center;
+  color: white;
+}
+.location-image {
+  height: 22rem;
+  width: 22rem;
+  border-radius: 1rem;
+  border: 0.8rem solid var(--almond);
+  background-image: url(e295924b6b6e13c324c1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.other-details {
+  height: 22rem;
+  display: grid;
+  grid-template-rows: 5fr 4fr 7fr;
+}
+.other-details h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.other-details p {
+  margin-top: 0.3rem;
+}
+.hours-separation {
+  display: flex;
+}
+.hours-separation > div:first-child {
+  flex: 2;
+}
+.hours-separation > div:last-child {
+  flex: 3;
 }
 /* end footer */
 .footer {

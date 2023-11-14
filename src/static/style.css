@@ -191,7 +191,42 @@ body {
 }
 /* for CONTACT */
 .contact-content {
-
+  background-color: var(--oxford-blue);
+  box-shadow: 2px 3px 10px 0px #000000;
+  gap: 3rem;
+  justify-content: center;
+  color: white;
+}
+.location-image {
+  height: 22rem;
+  width: 22rem;
+  border-radius: 1rem;
+  border: 0.8rem solid var(--almond);
+  background-image: url(./images/maps-screen.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.other-details {
+  height: 22rem;
+  display: grid;
+  grid-template-rows: 5fr 4fr 7fr;
+}
+.other-details h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.other-details p {
+  margin-top: 0.3rem;
+}
+.hours-separation {
+  display: flex;
+}
+.hours-separation > div:first-child {
+  flex: 2;
+}
+.hours-separation > div:last-child {
+  flex: 3;
 }
 /* end footer */
 .footer {
