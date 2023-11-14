@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,6 +50,14 @@ table {
 html {
   box-sizing: border-box;
   font-size: 16px;
+  /* color palette */
+  --almond: rgb(241, 230, 219);
+  --french-mauve: #c47ac0ff;
+  --coquelicot: #ff4a1cff;
+  --oxford-blue: #161b33ff;
+  --dark-purple: #160c28ff;
+  /* base color */
+  background-color: var(--almond);
 }
 *,
 *::before,
@@ -58,10 +67,30 @@ html {
 body {
   min-height: 100vh;
 }
+
+/* font */
+/* font weights 300, 400, 500, 700 */
+
 /* for debugging */
 * {
-  outline: 1px solid grey;
+  outline: 1px solid teal;
 }
 
+/* layout */
+.content {
+  display: grid;
+  min-height: 100vh;
+  grid-template: 9rem 4rem minmax(30rem, 1fr) 8rem / 1fr;
+}
+.header {
+  display: grid;
+  background-color: var(--oxford-blue);
+  place-content: center;
+  color: white;
+  font-size: 3rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  border-bottom: 0.5rem solid var(--coquelicot);
+}
 
 /*# sourceMappingURL=app.css.map*/

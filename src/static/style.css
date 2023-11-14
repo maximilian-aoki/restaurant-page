@@ -1,6 +1,14 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  /* color palette */
+  --almond: rgb(241, 230, 219);
+  --french-mauve: #c47ac0ff;
+  --coquelicot: #ff4a1cff;
+  --oxford-blue: #161b33ff;
+  --oxford-button: rgb(56, 74, 165);
+  /* base color */
+  background-color: var(--almond);
 }
 *,
 *::before,
@@ -10,22 +18,55 @@ html {
 body {
   min-height: 100vh;
 }
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+/* font weights 300, 400, 500, 700 */
+
 /* for debugging */
 * {
-  outline: 1px solid grey;
+  outline: 1px solid teal;
 }
 
-/* styling */
+/* layout */
+.content {
+  display: grid;
+  min-height: 100vh;
+  grid-template: 9rem 4rem minmax(30rem, 1fr) 8rem / 1fr;
+  font-family: 'Roboto Mono', monospace;
+}
+.header {
+  display: grid;
+  background-color: var(--oxford-blue);
+  place-content: center;
+  color: white;
+  text-shadow: 3px 2px 0 #7A7A7A;
+  font-size: 3rem;
+  font-weight: 700;
+  border-bottom: 0.5rem solid var(--coquelicot);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav > button {
+  height: 70%;
+  width: 10rem;
+  border: none;
+  background-color: var(--oxford-blue);
+  border-radius: 0.4rem;
+  color: white;
+  font-size: 1.4rem;
+  box-shadow: 2px 3px 8px 0px #000000;
+}
 .inner-content {
-  background-color: rgb(225, 225, 225);
-  height: 40px;
+  display: grid;
 }
-.inner-content.home {
-  background-color: rgb(59, 105, 157);
-}
-.inner-content.menu {
-  background-color: rgb(60, 129, 41);
-}
-.inner-content.contact {
-  background-color: rgb(150, 67, 67);
+.footer {
+  display: grid;
+  place-content: center;
+  background-color: var(--oxford-blue);
+  color: var(--almond);
 }
