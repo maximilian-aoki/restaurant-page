@@ -14,3 +14,18 @@ body {
 * {
   outline: 1px solid grey;
 }
+
+/* styling */
+.inner-content {
+  background-color: rgb(225, 225, 225);
+  height: 40px;
+}
+.inner-content.home {
+  background-color: rgb(59, 105, 157);
+}
+.inner-content.menu {
+  background-color: rgb(60, 129, 41);
+}
+.inner-content.contact {
+  background-color: rgb(150, 67, 67);
+}
