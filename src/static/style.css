@@ -6,6 +6,7 @@ html {
   --french-mauve: #c47ac0ff;
   --coquelicot: #ff4a1cff;
   --oxford-blue: #161b33ff;
+  --oxford-hover: rgb(41, 48, 84);
   --oxford-button: rgb(56, 74, 165);
   /* base color */
   background-color: var(--almond);
@@ -25,7 +26,7 @@ body {
 
 /* for debugging */
 * {
-  outline: 1px solid teal;
+  /* outline: 1px solid teal; */
 }
 
 /* layout */
@@ -59,8 +60,22 @@ body {
   border-radius: 0.4rem;
   color: white;
   font-size: 1.4rem;
+  font-weight: 500;
   box-shadow: 2px 3px 8px 0px #000000;
 }
+/* button interactions */
+.nav > button:not(:disabled):hover {
+  border-left: 0.4rem solid var(--french-mauve);
+  background-color: var(--oxford-hover);
+  cursor: pointer;
+}
+.nav > button:disabled {
+  color: var(--oxford-blue);
+  background-color: var(--french-mauve);
+  border: 0.2rem solid var(--oxford-hover);
+  font-weight: 700;
+}
+/* inner content */
 .inner-content {
   display: grid;
 }

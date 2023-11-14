@@ -7,62 +7,67 @@ import { getHome } from './assets/home.js';
 import { getMenu } from './assets/menu.js';
 import { getContact } from './assets/contact.js';
 
-// app code
-const container = document.querySelector('#content');
+// initialize HTML structure and event listeners
+const Base = (function() {
+  const container = document.querySelector('.content');
+  container.innerHTML = 
+    `
+    <div class="header">
+      <h1>THE A.I.CE CREAMERY</h1>
+    </div>
+    <div class="nav">
+      <button type="button" class="home" disabled>--home</button>
+      <button type="button" class="menu">--menu</button>
+      <button type="button" class="contact">--contact</button>
+    </div>
+    <div class="inner-content"></div>
+    <div class="footer">
+      <p>2023 Copyright: maximilian_aoki</p>
+    </div>
+    `
+  ;
+  const innerContent = document.querySelector('.inner-content');
 
-// (function() {
-//   const homeButton = document.createElement('button');
-//   homeButton.innerText = 'Home';
-//   const menuButton = document.createElement('button');
-//   menuButton.innerText = 'Menu';
-//   const contactButton = document.createElement('button');
-//   contactButton.innerText = 'Contact';
-//   const content = document.createElement('div');
-//   content.classList.add('inner-content');
+  const homeButton = document.querySelector('.home');
+  const menuButton = document.querySelector('.menu');
+  const contactButton = document.querySelector('.contact');
 
-//   container.appendChild(homeButton);
-//   container.appendChild(menuButton);
-//   container.appendChild(contactButton);
-//   container.appendChild(content);
+  const allButtons = [homeButton, menuButton, contactButton];
 
-//   homeButton.addEventListener('click', renderHome);
-//   menuButton.addEventListener('click', renderMenu);
-//   contactButton.addEventListener('click', renderContact);
+  homeButton.addEventListener('click', render);
+  menuButton.addEventListener('click', render);
+  contactButton.addEventListener('click', render);
 
-//   renderHome();
-// })();
-
-// function renderHome() {
-//   const innerContent = document.querySelector('.inner-content');
-//   clearContent(innerContent);
-//   innerContent.appendChild(getHome());
-//   innerContent.classList.add('home');
-//   innerContent.classList.remove('menu');
-//   innerContent.classList.remove('contact');
-// }
-
-// function renderMenu() {
-//   const innerContent = document.querySelector('.inner-content');
-//   clearContent(innerContent);
-//   innerContent.appendChild(getMenu());
-//   innerContent.classList.add('menu');
-//   innerContent.classList.remove('home');
-//   innerContent.classList.remove('contact');
-// }
-
-// function renderContact() {
-//   const innerContent = document.querySelector('.inner-content');
-//   clearContent(innerContent);
-//   innerContent.appendChild(getContact());
-//   innerContent.classList.add('contact');
-//   innerContent.classList.remove('menu');
-//   innerContent.classList.remove('home');
-// }
+  return { innerContent, allButtons };
+})();
 
 // delete inner content in preparation for refresh
-function clearContent(element) {
-  let childArr = Array.from(element.children);
+function clearContent() {
+  let childArr = Array.from(Base.innerContent.children);
   for (let child of childArr) {
-    element.removeChild(child);
+    Base.innerContent.removeChild(child);
+  }
+}
+
+// toggle which nav button is disabled
+function buttonDisabled(targetButton) {
+  for (let button of Base.allButtons) {
+    button.removeAttribute('disabled');
+  }
+  targetButton.setAttribute('disabled', true);
+}
+
+// render contents
+function render(e) {
+  buttonDisabled(e.target);
+  clearContent();
+
+  const target = e.target.textContent;
+  if (target === '--home') {
+    Base.innerContent.appendChild(getHome());
+  } else if (target === '--menu') {
+    Base.innerContent.appendChild(getMenu());
+  } else if (target === '--contact') {
+    Base.innerContent.appendChild(getContact());
   }
 }
