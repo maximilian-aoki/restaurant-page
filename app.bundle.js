@@ -1,2 +1,2 @@
-(()=>{"use strict";console.log("Home!"),console.log("Menu!"),console.log("Contact!")})();
+(()=>{"use strict";document.querySelector("#content")})();
 //# sourceMappingURL=app.bundle.js.map
