@@ -1,6 +1,16 @@
 export function getHome() {
-  const home = document.createElement('h2');
-  home.innerText = 'Home';
+  const home = document.createElement('div');
+  home.classList.add('home-content');
+
+  home.innerHTML = 
+    `
+    <div class="main-image"></div>
+    <div class="quote">
+      <h2>"Scoops of Singularity - Taste the Artificially Sweet!"</h2>
+      <p>--robot-chef</p>
+    </div>
+    `
+  ;
 
   return home;
 }

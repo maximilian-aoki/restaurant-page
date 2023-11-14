@@ -16,7 +16,7 @@ const Base = (function() {
       <h1>THE A.I.CE CREAMERY</h1>
     </div>
     <div class="nav">
-      <button type="button" class="home" disabled>--home</button>
+      <button type="button" class="home">--home</button>
       <button type="button" class="menu">--menu</button>
       <button type="button" class="contact">--contact</button>
     </div>
@@ -33,31 +33,14 @@ const Base = (function() {
   const contactButton = document.querySelector('.contact');
 
   const allButtons = [homeButton, menuButton, contactButton];
+  for (let button of allButtons) {
+    button.addEventListener('click', render);
+  }
 
-  homeButton.addEventListener('click', render);
-  menuButton.addEventListener('click', render);
-  contactButton.addEventListener('click', render);
-
-  return { innerContent, allButtons };
+  return { innerContent, homeButton, allButtons };
 })();
 
-// delete inner content in preparation for refresh
-function clearContent() {
-  let childArr = Array.from(Base.innerContent.children);
-  for (let child of childArr) {
-    Base.innerContent.removeChild(child);
-  }
-}
-
-// toggle which nav button is disabled
-function buttonDisabled(targetButton) {
-  for (let button of Base.allButtons) {
-    button.removeAttribute('disabled');
-  }
-  targetButton.setAttribute('disabled', true);
-}
-
-// render contents
+// // render contents
 function render(e) {
   buttonDisabled(e.target);
   clearContent();
@@ -71,3 +54,22 @@ function render(e) {
     Base.innerContent.appendChild(getContact());
   }
 }
+
+// // delete inner content in preparation for refresh
+function clearContent() {
+  let childArr = Array.from(Base.innerContent.children);
+  for (let child of childArr) {
+    Base.innerContent.removeChild(child);
+  }
+}
+
+// // toggle which nav button is disabled
+function buttonDisabled(targetButton) {
+  for (let button of Base.allButtons) {
+    button.removeAttribute('disabled');
+  }
+  targetButton.setAttribute('disabled', true);
+}
+
+// // init 'home'
+Base.homeButton.click();

@@ -21,7 +21,7 @@ body {
 }
 
 /* font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 /* font weights 300, 400, 500, 700 */
 
 /* for debugging */
@@ -78,7 +78,56 @@ body {
 /* inner content */
 .inner-content {
   display: grid;
+  grid-template: 2rem 1fr 2rem / 1fr max(50rem, 70%) 1fr;
+  place-content: center;
 }
+.inner-content > div {
+  grid-area: 2 / 2 / 3 / 3;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+/* for HOME */
+.home-content {
+  gap: 2rem;
+}
+.main-image {
+  height: 22rem;
+  width: 22rem;
+  border-radius: 1rem;
+  border: 0.6rem solid var(--oxford-blue);
+  background-image: url(./images/ice-cream-logo.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.quote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 22rem;
+  padding: 2rem;
+}
+.quote > h2 {
+  font-style: italic;
+  font-size: 2rem;
+}
+.quote > p {
+  font-weight: 700;
+  color: var(--oxford-blue);
+}
+/* for MENU */
+.menu-content {
+
+}
+/* for CONTACT */
+.contact-content {
+
+}
+/* end footer */
 .footer {
   display: grid;
   place-content: center;

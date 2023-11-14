@@ -1,6 +1,12 @@
 export function getContact() {
-  const contact = document.createElement('h2');
-  contact.innerText = 'Contact';
+  const contact = document.createElement('div');
+  contact.classList.add('contact-content');
+
+  contact.innerHTML = 
+    `
+    
+    `
+  ;
 
   return contact;
 }
