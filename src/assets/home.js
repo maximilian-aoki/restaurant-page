@@ -7,7 +7,7 @@ export function getHome() {
     <div class="main-image"></div>
     <div class="quote">
       <h2>"Scoops of Singularity - Taste the Artificially Sweet!"</h2>
-      <p>--robot-chef</p>
+      <p>--robo-chef</p>
     </div>
     `
   ;

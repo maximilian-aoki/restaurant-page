@@ -13,7 +13,8 @@
     "init-babel": "npm install babel-core babel-preset-env babel-loader --save-dev",
     "init-css": "npm install css-loader mini-css-extract-plugin --save-dev",
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "git-deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
